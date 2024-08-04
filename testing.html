@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  #div1{
+    height: 300px;
+    width: 300px;
+    background: dodgerblue;
+    overflow: auto;
+  }
+  #scroll{
+    height: 1000px;
+    width: 1000px;
+    background: coral;
+  }
+
+  
+
+</style>
+<body>
+  <div id="div1" onscroll="onscrollFunc()">
+    <div id="scroll">Scroll me</div>
+  </div>
+
+</body>
+<script>
+  const div1= document.getElementById('div1');
+  function onscrollFunc(){
+    console.log('horizontall is', div1.scrollLeft);
+    console.log('vertical is', div1.scrollTop);
+    
+  }
+</script>
+</html>

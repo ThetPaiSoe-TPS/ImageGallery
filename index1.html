@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="gallery-wrap">
+        <img id="backImg" src="./h-scroll-img/images/back.png" alt="" onclick="back()">
+       <div class="gallery">
+        <div>
+            <span><img src="/h-scroll-img/images/image-1.png" alt=""></span>
+            <span><img src="/h-scroll-img/images/image-2.png" alt=""></span>
+            <span><img src="/h-scroll-img/images/image-3.png" alt=""></span>
+        </div>
+        <div>
+            <span><img src="/h-scroll-img/images/image-4.png" alt=""></span>
+            <span><img src="/h-scroll-img/images/image-5.png" alt=""></span>
+            <span><img src="/h-scroll-img/images/image-6.png" alt=""></span>
+        </div>
+       </div>
+        <img id="nextImg" src="/h-scroll-img/images/next.png" alt="" onclick="next()">
+
+    </div>
+</body>
+<script>
+    const gallery= document.querySelector('.gallery');
+    gallery.addEventListener('wheel', scrollFunc);
+    function scrollFunc(event){
+        let result= event.deltaY;
+        gallery.scrollLeft+= result;
+        gallery.style.scrollBehavior= 'auto';
+    }
+
+    function next(event){
+        let answer= gallery.scrollLeft+= 900;
+        gallery.style.scrollBehavior= 'smooth';
+    }
+
+    function back(event){
+        let answer= gallery.scrollLeft-= 900;        
+    }
+</script>
+</html>
